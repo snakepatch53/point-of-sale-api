@@ -19,8 +19,8 @@ class InfoSeeder extends Seeder
         DB::table('infos')->insert([
             'name' => 'Gonzalo Network LLC',
             'email' => 'gonzaloproducciones1@hotmail.com',
-            "logo" => "logo.png",
-            "icon" => "icon.png",
+            "logo" => "1.png",
+            "icon" => "1.png",
             "city" => "New York",
             "address" => "41-01 108 st Corona ny 11368",
             "phone" => "3472582888",

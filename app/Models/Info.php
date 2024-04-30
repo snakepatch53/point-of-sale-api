@@ -25,7 +25,7 @@ class Info extends Model
         'email_verified_at' => 'datetime',
     ];
 
-    protected $append = ["logo_url", "icon_url"];
+    protected $appends = ["logo_url", "icon_url"];
 
     public function getLogoUrlAttribute()
     {
