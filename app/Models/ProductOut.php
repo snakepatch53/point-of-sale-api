@@ -10,7 +10,6 @@ class ProductOut extends Model
     use HasFactory;
 
     protected $fillable = [
-        "date",
         "quantity",
         "price",
         "commission",

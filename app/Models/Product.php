@@ -21,7 +21,7 @@ class Product extends Model
         "locker_id",
     ];
 
-    protected $appends = ["photo_url", "stock", "price"];
+    protected $appends = ["photo_url", "stock", "price", "commission"];
 
     public function getPhotoUrlAttribute()
     {
@@ -51,6 +51,18 @@ class Product extends Model
             $price -= $productOut->price;
         }
         return $price > 0 ? $price : 0;
+    }
+
+    public function getCommissionAttribute()
+    {
+        $commission = 0;
+        foreach ($this->productIns as $productIn) {
+            $commission += $productIn->commission;
+        }
+        foreach ($this->productOuts as $productOut) {
+            $commission -= $productOut->commission;
+        }
+        return $commission > 0 ? $commission : 0;
     }
 
     public function loker()

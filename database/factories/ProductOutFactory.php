@@ -20,7 +20,6 @@ class ProductOutFactory extends Factory
     public function definition()
     {
         return [
-            "date" => $this->faker->date(),
             "quantity" => $this->faker->randomNumber(),
             "price" => $this->faker->randomNumber(),
             "commission" => $this->faker->randomNumber(),
