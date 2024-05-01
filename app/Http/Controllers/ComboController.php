@@ -8,11 +8,9 @@ use Illuminate\Support\Facades\Validator;
 
 class ComboController extends Controller
 {
-
     public function bulkSale(Request $request)
     {
         $validator = Validator::make($request->all(),  [
-            "date" => "required",
             "iva" => 'required|numeric',
             "client_id" => "required|exists:clients,id",
             "user_id" => "required|exists:users,id",

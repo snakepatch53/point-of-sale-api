@@ -10,7 +10,6 @@ class ProductSale extends Model
     use HasFactory;
 
     protected $fillable = [
-        "date",
         "iva",
         "client_id",
         "user_id",

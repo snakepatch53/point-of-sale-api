@@ -19,7 +19,6 @@ class ProductSaleFactory extends Factory
     public function definition()
     {
         return [
-            "date" => $this->faker->date(),
             "iva" => $this->faker->randomNumber(),
             "client_id" => Client::factory(),
             "user_id" => User::factory(),
