@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ComboController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\LockerController;
 use App\Http\Controllers\ProductBuyController;
@@ -31,6 +32,9 @@ Route::group(['prefix' => 'v1'], function () {
     Route::resource('productIns', ProductInController::class);
     Route::resource('productSales', ProductSaleController::class);
     Route::resource('productOuts', ProductOutController::class);
+
+    // Combo controllers
+    Route::post('combo/bulkSale', [ComboController::class, 'bulkSale']);
 });
 
 // Not Found
