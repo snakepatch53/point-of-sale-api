@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('product_buys', function (Blueprint $table) {
             $table->id();
-            $table->date("date_buy");
-            $table->double("iva_buy");
+            $table->double("tax");
             $table->foreignId('suplier_id')->constrained('supliers');
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();

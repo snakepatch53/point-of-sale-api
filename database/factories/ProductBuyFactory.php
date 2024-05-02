@@ -19,8 +19,7 @@ class ProductBuyFactory extends Factory
     public function definition()
     {
         return [
-            "date_buy" => $this->faker->date(),
-            "iva_buy" => $this->faker->randomNumber(2),
+            "tax" => $this->faker->randomNumber(2),
             "suplier_id" => Suplier::factory(),
             "user_id" => User::factory(),
         ];

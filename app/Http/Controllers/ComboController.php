@@ -12,15 +12,15 @@ class ComboController extends Controller
     public function bulkSale(Request $request)
     {
         $validator = Validator::make($request->all(),  [
-            "iva" => 'required|numeric',
+            "tax" => 'required|numeric',
             "client_id" => "required|exists:clients,id",
             "user_id" => "required|exists:users,id",
             "products" => "required|array",
             "products.*.product_id" => "required|exists:products,id",
             "products.*.quantity" => "required|numeric"
         ], [
-            "iva.required" => "El campo iva es requerido",
-            'iva.numeric' => 'El campo iva debe ser un número',
+            "tax.required" => "El campo tax es requerido",
+            'tax.numeric' => 'El campo tax debe ser un número',
             "client_id.required" => "El campo cliente es requerido",
             "client_id.exists" => "El cliente no existe",
             "user_id.required" => "El campo usuario es requerido",

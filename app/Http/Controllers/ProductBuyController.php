@@ -27,14 +27,12 @@ class ProductBuyController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(),  [
-            "date_buy" => "required",
-            "iva_buy" => "required|numeric",
+            "tax" => "required|numeric",
             "suplier_id" => "required|exists:supliers,id",
             "user_id" => "required|exists:users,id"
         ], [
-            "date_buy.required" => "La fecha de venta es requerida",
-            "iva_buy.required" => "El precio es requerido",
-            'iva.numeric' => 'El campo iva debe ser un número',
+            "tax.required" => "El precio es requerido",
+            'tax.numeric' => 'El campo iva debe ser un número',
             "suplier_id.required" => "El campo proveedor es requerido",
             "suplier_id.exists" => "El proveedor no existe",
             "user_id.required" => "El campo usuario es requerido",

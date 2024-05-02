@@ -10,8 +10,7 @@ class ProductBuy extends Model
     use HasFactory;
 
     protected $fillable = [
-        "date_buy",
-        "iva_buy",
+        "tax",
         "suplier_id",
         "user_id"
     ];
