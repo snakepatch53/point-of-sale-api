@@ -28,14 +28,12 @@ class ProductInController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(),  [
-            "date" => 'required',
             "quantity" => 'required|numeric',
             "price" => 'required|numeric',
             "commission" => 'required|numeric',
             "product_id" => "required|exists:products,id",
             "product_buy_id" => "required|exists:product_buys,id"
         ], [
-            'date.required' => 'El campo fecha es requerido',
             'quantity.required' => 'El campo cantidad es requerido',
             'quantity.numeric' => 'El campo cantidad debe ser un número',
             'price.required' => 'El campo precio es requerido',
