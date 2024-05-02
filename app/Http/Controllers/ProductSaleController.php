@@ -27,14 +27,12 @@ class ProductSaleController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(),  [
-            "date" => "required",
-            "iva" => 'required|numeric',
+            "tax" => 'required|numeric',
             "client_id" => "required|exists:clients,id",
             "user_id" => "required|exists:users,id",
         ], [
-            "date.required" => "El campo fecha es requerido",
-            "iva.required" => "El campo iva es requerido",
-            'iva.numeric' => 'El campo iva debe ser un número',
+            "tax.required" => "El campo tax es requerido",
+            'tax.numeric' => 'El campo tax debe ser un número',
             "client_id.required" => "El campo cliente es requerido",
             "client_id.exists" => "El cliente no existe",
             "user_id.required" => "El campo usuario es requerido",
@@ -88,14 +86,12 @@ class ProductSaleController extends Controller
         }
 
         $validator = Validator::make($request->all(),  [
-            "date" => "required",
-            "iva" => 'required|numeric',
+            "tax" => 'required|numeric',
             "client_id" => "required|exists:clients,id",
             "user_id" => "required|exists:users,id",
         ], [
-            "date.required" => "El campo fecha es requerido",
-            "iva.required" => "El campo iva es requerido",
-            'iva.numeric' => 'El campo iva debe ser un número',
+            "tax.required" => "El campo tax es requerido",
+            'tax.numeric' => 'El campo tax debe ser un número',
             "client_id.required" => "El campo cliente es requerido",
             "client_id.exists" => "El cliente no existe",
             "user_id.required" => "El campo usuario es requerido",

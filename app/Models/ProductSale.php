@@ -10,7 +10,7 @@ class ProductSale extends Model
     use HasFactory;
 
     protected $fillable = [
-        "iva",
+        "tax",
         "client_id",
         "user_id",
     ];

@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('product_sales', function (Blueprint $table) {
             $table->id();
-            $table->double("iva");
+            $table->double("tax");
             $table->foreignId('client_id')->constrained('clients');
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
