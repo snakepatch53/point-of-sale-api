@@ -13,10 +13,11 @@ class ComboController extends Controller
     {
         $validator = Validator::make($request->all(),  [
             "tax" => 'required|numeric',
-            "client_id" => "required|exists:clients,id",
+            // client id exist or 0 (for guest)
+            "client_id" => "required|exists:clients,id,0",
             "user_id" => "required|exists:users,id",
             "products" => "required|array",
-            "products.*.product_id" => "required|exists:products,id",
+            "products.*.product_id" => "required|exists:products,id|distinct",
             "products.*.quantity" => "required|numeric"
         ], [
             "tax.required" => "El campo tax es requerido",
@@ -31,8 +32,6 @@ class ComboController extends Controller
             "products.*.product_id.exists" => "El producto no existe",
             "products.*.quantity.required" => "El campo cantidad es requerido",
             "products.*.quantity.numeric" => "El campo cantidad debe ser un número",
-            "products.*.price.required" => "El campo precio es requerido",
-            "products.*.price.numeric" => "El campo precio debe ser un número",
             "products.*.product_id.distinct" => "El producto se repite"
         ]);
 

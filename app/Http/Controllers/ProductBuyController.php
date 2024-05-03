@@ -14,6 +14,7 @@ class ProductBuyController extends Controller
     {
         $includes = [];
         if ($request->query('includeProductIns')) $includes[] = 'productIns';
+        if ($request->query('includeSuplier')) $includes[] = 'suplier';
         // if ($request->query('includeCarts')) $includes[] = 'carts';
 
         $data = ProductBuy::with($includes)->get();

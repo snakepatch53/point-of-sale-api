@@ -13,6 +13,7 @@ class ProductSaleController extends Controller
     {
         $includes = [];
         if ($request->query('includeProductOuts')) $includes[] = 'productOuts';
+        if ($request->query('includeClient')) $includes[] = 'client';
         // if ($request->query('includeCarts')) $includes[] = 'carts';
 
         $data = ProductSale::with($includes)->get();
