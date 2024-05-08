@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Entity;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,6 +20,7 @@ class LockerFactory extends Factory
         return [
             "name" => $this->faker->name(),
             "description" => $this->faker->sentence(),
+            "entity_id" => Entity::factory(),
         ];
     }
 }

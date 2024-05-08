@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Entity;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -25,6 +26,7 @@ class SuplierFactory extends Factory
             "cellphone" => $this->faker->phoneNumber(),
             "email" => fake()->unique()->safeEmail(),
             "ruc" => $this->faker->randomNumber(),
+            "entity_id" => Entity::factory(),
         ];
     }
 }

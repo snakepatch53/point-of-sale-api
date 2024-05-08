@@ -12,10 +12,16 @@ class Locker extends Model
     protected $fillable = [
         "name",
         "description",
+        "entity_id"
     ];
 
     public function products()
     {
         return $this->hasMany(Product::class);
+    }
+
+    public function entity()
+    {
+        return $this->belongsTo(Entity::class);
     }
 }

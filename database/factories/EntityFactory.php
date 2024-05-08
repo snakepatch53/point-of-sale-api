@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Entity;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Client>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Entity>
  */
-class ClientFactory extends Factory
+class EntityFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,17 +18,14 @@ class ClientFactory extends Factory
     {
         return [
             "name" => $this->faker->name(),
-            "name2" => $this->faker->name(),
-            "lastname" => $this->faker->lastName(),
-            "lastname2" => $this->faker->lastName(),
-            "dni" => $this->faker->randomNumber(8),
-            "ruc" => $this->faker->randomNumber(8),
+            "logo" => $this->faker->randomElement(["1.png", "2.png"]),
+            "icon" => $this->faker->randomElement(["1.png", "2.png"]),
             "city" => $this->faker->city(),
             "address" => $this->faker->address(),
             "phone" => $this->faker->phoneNumber(),
             "cellphone" => $this->faker->phoneNumber(),
-            "email" => fake()->unique()->safeEmail(),
-            "entity_id" => Entity::factory(),
+            "email"  => fake()->unique()->safeEmail(),
+            "tax" => $this->faker->name(),
         ];
     }
 }

@@ -24,6 +24,8 @@ class User extends Authenticatable
         'password',
         'photo',
         'role',
+        "entity_id"
+
     ];
 
     protected $hidden = [
@@ -54,5 +56,10 @@ class User extends Authenticatable
     public function productSales()
     {
         return $this->hasMany(ProductSale::class);
+    }
+
+    public function entity()
+    {
+        return $this->belongsTo(Entity::class);
     }
 }

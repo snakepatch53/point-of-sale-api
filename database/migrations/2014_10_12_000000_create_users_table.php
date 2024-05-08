@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('photo')->nullable();
+            $table->foreignId('entity_id')->constrained('entities');
             $table->enum('role', User::$_ROLES)->default(User::$_ROLES[0]);
             $table->rememberToken();
             $table->timestamps();

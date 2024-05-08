@@ -17,14 +17,14 @@ class InfoSeeder extends Seeder
     public function run()
     {
         DB::table('infos')->insert([
-            'name' => 'Gonzalo Network LLC',
-            'email' => 'gonzaloproducciones1@hotmail.com',
+            'name' => 'Ideasoft Sell',
+            'email' => 'ideasoftdev@gmail.com',
             "logo" => "1.png",
             "icon" => "1.png",
-            "city" => "New York",
-            "address" => "41-01 108 st Corona ny 11368",
-            "phone" => "3472582888",
-            "cellphone" => "3472582888",
+            "city" => "Macas",
+            "address" => "Barrio 27 de Febrero",
+            "phone" => "0959999086",
+            "cellphone" => "0959999086",
             "tax" => "0",
         ]);
     }

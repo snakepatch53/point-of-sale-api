@@ -18,6 +18,7 @@ class Suplier extends Model
         "cellphone",
         "email",
         "ruc",
+        "entiy_id"
     ];
 
     protected $casts = [
@@ -27,5 +28,10 @@ class Suplier extends Model
     public function productBuys()
     {
         return $this->hasMany(ProductBuy::class);
+    }
+
+    public function entity()
+    {
+        return $this->belongsTo(Entity::class);
     }
 }

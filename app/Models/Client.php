@@ -19,7 +19,8 @@ class Client extends Model
         "address",
         "phone",
         "cellphone",
-        "email"
+        "email",
+        "entity_id"
     ];
 
     protected $casts = [
@@ -29,5 +30,10 @@ class Client extends Model
     public function productSales()
     {
         return $this->hasMany(ProductSale::class);
+    }
+
+    public function entity()
+    {
+        return $this->belongsTo(Entity::class);
     }
 }

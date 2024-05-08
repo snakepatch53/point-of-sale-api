@@ -19,6 +19,7 @@ class Product extends Model
         "description",
         "photo",
         "locker_id",
+        "entity_id"
     ];
 
     protected $appends = ["photo_url", "stock", "price", "commission"];
@@ -78,5 +79,10 @@ class Product extends Model
     public function productOuts()
     {
         return $this->hasMany(ProductOut::class);
+    }
+
+    public function entity()
+    {
+        return $this->belongsTo(Entity::class);
     }
 }

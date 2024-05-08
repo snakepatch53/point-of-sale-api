@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Info extends Model
+class Entity extends Model
 {
     use HasFactory;
 
@@ -30,13 +30,13 @@ class Info extends Model
     public function getLogoUrlAttribute()
     {
         if ($this->logo == null) return asset("storage/app/public/img/logo.png");
-        return asset("storage/app/public/info_logo/" . $this->logo);
+        return asset("storage/app/public/entity_logo/" . $this->logo);
     }
 
     public function getIconUrlAttribute()
     {
         if ($this->logo == null) return asset("storage/app/public/img/icon.png");
-        return asset("storage/app/public/info_icon/" . $this->icon);
+        return asset("storage/app/public/entity_icon/" . $this->icon);
     }
 
     public function products()

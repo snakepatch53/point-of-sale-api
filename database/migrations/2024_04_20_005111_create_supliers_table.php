@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string("cellphone");
             $table->string("email");
             $table->string("ruc");
+            $table->foreignId('entity_id')->constrained('entities');
             $table->timestamps();
         });
     }

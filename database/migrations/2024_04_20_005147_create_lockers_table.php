@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->text("description");
+            $table->foreignId('entity_id')->constrained('entities');
             $table->timestamps();
         });
     }

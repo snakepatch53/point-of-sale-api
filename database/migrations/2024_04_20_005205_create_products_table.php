@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string("expiration");
             $table->longText("description");
             $table->string("photo");
+            $table->foreignId('entity_id')->constrained('entities');
             $table->foreignId('locker_id')->constrained('lockers');
             $table->timestamps();
         });

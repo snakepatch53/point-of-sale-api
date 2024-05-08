@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
             'email' => 'admin',
             'password' => bcrypt('admin'),
             'role' => User::$_ROLES[2],
+            'entity_id' => 1,
         ]);
 
         /*

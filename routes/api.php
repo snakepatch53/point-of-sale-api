@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ComboController;
+use App\Http\Controllers\EntityController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\LockerController;
 use App\Http\Controllers\ProductBuyController;
@@ -15,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'v1'], function () {
     Route::resource('info', InfoController::class);
+
+    Route::resource('entities', EntityController::class);
+    Route::get('entities/find/{name}', [EntityController::class, 'find']);
+    Route::post('entities/{id}', [EntityController::class, 'update']);
 
     Route::resource('users', UserController::class);
     Route::post('users/login', [UserController::class, 'login']);

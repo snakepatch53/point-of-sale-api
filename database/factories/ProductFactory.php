@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Entity;
 use App\Models\Locker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -10,11 +11,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ProductFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition()
     {
         return [
@@ -27,6 +23,7 @@ class ProductFactory extends Factory
             "description" => $this->faker->sentence(),
             "photo" => $this->faker->randomElement(["1.png", "2.png", "3.png", "4.png", "5.png"]),
             "locker_id" => Locker::factory(),
+            "entity_id" => Entity::factory(),
         ];
     }
 }

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 class ProductController extends Controller
 {
 
-    private $PHOTO_PATH = "public/img_users";
+    private $PHOTO_PATH = "public/img_products";
     private $IMAGE_TYPE = "jpg,jpeg,png";
 
     public function index(Request $request)
